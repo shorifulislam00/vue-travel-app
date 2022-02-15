@@ -33,6 +33,7 @@ const routes = [
 ];
 
 const router = new VueRouter({
+  linkExactActiveClass: "vue-school-active-class",
   routes,
 });
 
