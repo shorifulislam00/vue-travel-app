@@ -8,7 +8,8 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
+    props: true
   },
   // {
   //   path: "/brazil",
@@ -31,13 +32,15 @@ const routes = [
   //   component: ()  => import(/* webpackChunkName: "panama" */ "../views/Panama.vue")
   // },
   {
-    path: "/details/:id",
+    path: "/details/:slug",
     name: "DestinationDetails",
+    props: true,
     component: () => import(/* webpackChunkName: "DestinationDetails" */ "../views/DestinationDetails")
   }
 ];
 
 const router = new VueRouter({
+  mode: "history",
   linkExactActiveClass: "vue-school-active-class",
   routes,
 });
