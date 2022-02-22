@@ -32,10 +32,18 @@ const routes = [
   //   component: ()  => import(/* webpackChunkName: "panama" */ "../views/Panama.vue")
   // },
   {
-    path: "/details/:slug",
+    path: "/destination/:slug",
     name: "DestinationDetails",
     props: true,
-    component: () => import(/* webpackChunkName: "DestinationDetails" */ "../views/DestinationDetails")
+    component: () => import(/* webpackChunkName: "DestinationDetails" */ "../views/DestinationDetails"),
+    children: [
+      {
+        path: ":experienceSlug",
+        name: "experienceDetails",
+        props: true,
+        component: () => import(/* webpackChunkName: "ExperienceDetails" */ "../views/ExperienceDetails")
+      }
+    ]
   }
 ];
 
